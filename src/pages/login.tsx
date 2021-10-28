@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react'
-// import { get } from '@/common/axios'
+import React, { useCallback, useState, useEffect } from 'react'
+import { get } from '@/common/axios'
 import { observer } from 'mobx-react'
 import { Button } from 'antd'
 import { useStores } from '@/hooks'
@@ -10,6 +10,11 @@ export default observer(() => {
   const history = useHistory()
 
   const [value, setValue] = useState('nix')
+
+  useEffect(() => {
+    console.log(value)
+  }, [value])
+
   const login = useCallback(() => {
     // get('/').then((RES) => {
     //   console.log(RES)

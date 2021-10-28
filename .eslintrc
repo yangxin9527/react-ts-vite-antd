@@ -1,7 +1,53 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:react-hooks/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "settings": {
     "react": {
       "version": "detect" // 表示探测当前 node_modules 安装的 react 版本
-    }
+    },
+    "linebreak-style": ["off", "windows"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "react-hooks/rules-of-hooks": "error", // 检查 Hook 的规则
+    "react-hooks/exhaustive-deps": "error", // 检查 effect 的依赖
+    "max-len": ["warn", { "code": 120 }],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          // add a custom message to help explain why not to use it
+          "Object": {
+            "message": "Use {} instead",
+            "fixWith": "{}"
+          },
+          // add a custom message, AND tell the plugin how to fix it
+          "String": {
+            "message": "Use string instead",
+            "fixWith": "string"
+          },
+          "Number": {
+            "message": "Use number instead",
+            "fixWith": "number"
+          }
+        }
+      }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "_", "argsIgnorePattern": "^_" }
+    ]
   }
 }

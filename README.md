@@ -1,6 +1,6 @@
 //参考 https://heavenru.com/post/Vite-with-React-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5
 
-.
+```
 ├── app.tsx
 ├── assets // 静态资源，会被打包优化
 │   ├── favicon.svg
@@ -34,6 +34,7 @@
 │   └── reset.less
 └── utils // 工具方法
 └── index.ts
+```
 
 ## 已完成
 
@@ -45,5 +46,22 @@
 
 ## 需要完成功能
 
-- mock
-- tools utils
+- husky
+- mock json server
+- tools utils 补全
+
+  // "husky": {
+  //   "hooks": {
+  //     "pre-commit": "lint-staged"
+  //   }
+  // },
+  // "lint-staged": {
+  //   "src/**/*.{ts,tsx}": [
+  //     "eslint --cache --fix",
+  //     "git add"
+  //   ],
+  //   "src/**/*.{js,jsx}": [
+  //     "eslint --cache --fix",
+  //     "git add"
+  //   ]
+  // },
