@@ -1,0 +1,7 @@
+{
+  "settings": {
+    "react": {
+      "version": "detect" // 表示探测当前 node_modules 安装的 react 版本
+    }
+  }
+}
